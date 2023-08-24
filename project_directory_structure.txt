@@ -1,0 +1,54 @@
+Folder PATH listing
+Volume serial number is 0ACE-738C
+C:.
+¦   db.sqlite3
+¦   manage.py
+¦   project_directory_structure.txt
+¦   
++---file_app
+¦   ¦   admin.py
+¦   ¦   apps.py
+¦   ¦   forms.py
+¦   ¦   models.py
+¦   ¦   tests.py
+¦   ¦   views.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---migrations
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           __init__.cpython-38.pyc
+¦   ¦           
+¦   +---static
+¦   ¦   +---images
+¦   ¦           background.jpg
+¦   ¦           
+¦   +---templates
+¦   ¦   +---file_app
+¦   ¦           extract.html
+¦   ¦           success.html
+¦   ¦           upload.html
+¦   ¦           upload_pdf.html
+¦   ¦           
+¦   +---__pycache__
+¦           admin.cpython-38.pyc
+¦           apps.cpython-38.pyc
+¦           forms.cpython-38.pyc
+¦           models.cpython-38.pyc
+¦           views.cpython-38.pyc
+¦           __init__.cpython-38.pyc
+¦           
++---file_upload
+    ¦   asgi.py
+    ¦   settings.py
+    ¦   urls.py
+    ¦   wsgi.py
+    ¦   __init__.py
+    ¦   
+    +---__pycache__
+            settings.cpython-38.pyc
+            urls.cpython-38.pyc
+            wsgi.cpython-38.pyc
+            __init__.cpython-38.pyc
+            

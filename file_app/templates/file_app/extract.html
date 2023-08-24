@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extracted Tests</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+            background: #7a7cc3;
+            background: -webkit-linear-gradient(211deg, #7a7cc3 0%, #72efe8 100%);
+            background: linear-gradient(211deg, #7a7cc3 0%, #72efe8 100%);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        
+        .content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .extracted-tests-container {
+            background: rgba(255, 255, 255, 0.6);
+            -webkit-backdrop-filter: blur(9px);
+            backdrop-filter: blur(9px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 800px; /* Increased max-width for wider container */
+            width: 80%;
+            text-align: left; /* Align results on the left */
+            margin: 0 auto; /* Center the container */
+        }
+
+
+        .download-btn {
+            background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+            border-radius: 8px;
+            border-style: none;
+            box-sizing: border-box;
+            color: #FFFFFF;
+            cursor: pointer;
+            flex-shrink: 0;
+            font-family: "Inter", sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            height: 5rem;
+            padding: 0 2.6rem;
+            text-align: center;
+            text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+            transition: all .5s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            margin-top: 20px; 
+            
+        }
+
+        .download-btn:hover {
+            box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+            transition-duration: .1s;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.3;
+            }
+        }
+        .navbar {
+            margin-bottom: 0;
+        }
+
+        .logo-img {
+            width: 190px;
+            height: auto;
+        }
+
+        .navbar {
+            background-color: #f5f5f5; /* Lighter background color for the navbar */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box-shadow */
+            border: none;
+            border-radius: 8px; /* Add border-radius for rounded corners */
+            margin-bottom: 0;
+            font-family: "Inter", sans-serif; /* Use Google Fonts */
+        }
+    
+        .navbar-default .navbar-brand {
+            color: #333; /* Text color for the logo */
+            font-size: 24px; /* Increase the font size for the logo */
+            padding: 10px; /* Add padding for better spacing */
+        }
+    
+        .navbar-default .navbar-nav > li > a {
+            color: #333; /* Text color for the navbar links */
+            font-size: 16px;
+            text-transform: uppercase;
+            padding: 20px 15px;
+            position: relative;
+            z-index: 1;
+            transition: background-color 0.3s, color 0.3s; /* Add smooth transition for link color change */
+            border-radius: 8px; /* Add border-radius for rounded corners */
+        }
+    
+        /* Update the hover effect for the navbar links */
+        .navbar-default .navbar-nav > li > a:hover {
+            background-color: #8facdb; /* Change the background color while hovering */
+            color: #f5f5f5; /* Set the text color to a lighter color while hovering */
+            text-decoration: none; /* Remove the default underline */
+        }
+    
+        /* Add a dot under the link when hovering */
+        .navbar-default .navbar-nav > li > a:hover::before {
+            content: "";
+            position: absolute;
+            bottom: 5px; /* Move the dot down slightly more */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: #f5f5f5; /* Set the dot color to a lighter color */
+            border-radius: 50%;
+        }
+    
+        /* Remove the blue line on active links */
+        .navbar-default .navbar-nav > li.active > a::before {
+            display: none;
+        }
+    
+        /* Add a border-bottom to the active link to show it as the current tab */
+        .navbar-default .navbar-nav > li.active > a {
+            border-bottom: 2px solid #236ee8;
+            background-color: #f5f5f5; /* Add background color to the active link */
+            color: #f5f5f5; /* Reset the text color for the active link */
+        }
+    
+        /* Style the toggler button */
+        .navbar-toggler {
+            background: transparent;
+            border: none;
+            outline: none !important;
+            padding: 0;
+            margin-top: 20px;
+        }
+    
+        /* Add custom styles for the toggler icon bars */
+        .navbar-toggler .icon-bar {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: background-color 0.2s;
+        }
+    
+        .navbar-toggler:hover .icon-bar {
+            background-color: #236ee8; /* Change the color when hovering */
+        }
+    
+        /* Hide the blue line on the logo when hovered */
+        .navbar-brand:hover::before {
+            transform: scaleX(0);
+        }
+    
+        /* Hide the blue line on the logo when active */
+        .navbar-brand.active::before {
+            display: none;
+        }
+
+
+    
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img class="logo-img" src="https://upload.wikimedia.org/wikipedia/fr/c/cc/LOGO_SAGEMCOM.png" alt="Your Logo or Brand">
+                </a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'upload_pdf' %}">Extract</a></li>
+                <li><a href="{% url 'upload_file' %}">Upload</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="extracted-tests-container">
+            <h1 style="text-align: center;">Extracted Tests</h1>
+            {% if subtitles %}
+            <ul>
+                {% for subtitle in subtitles %}
+                <li>{{ subtitle }}</li>
+                {% endfor %}
+            </ul>
+            <div style="text-align: center; margin-top: 20px;">
+                <a class="download-btn btn btn-primary btn-lg" href="{% url 'download_subtitles_btf' %}" role="button">Download BTF </a>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a class="download-btn btn btn-primary btn-lg" href="{% url 'download_subtitles_bav' %}" role="button">Download BAV </a>
+            </div>
+            {% else %}
+            <p>No tests found.</p>
+            {% endif %}
+        </div>
+    </div>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
